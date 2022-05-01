@@ -38,14 +38,18 @@ time.sleep(3)
 # p = [T(1,4), T(2,4), T(3,4)];
 
 # Next we import the data points as a list from the CSV file using Pandas. 
+url = "https://raw.githubusercontent.com/leoPuerto01/RBE580_Project/main/matlab/davinci%20wrist%20sample.csv"
 
 col_list = ["Point1_X","Point1_Y","Point1_Z","Point2_X","Point2_Y","Point2_Z","Point3_X","Point3_Y", "Point3	_Z"]
 
-# Displaying the entire data frame
-#pd.options.display.max_rows = 9999
-
 #Read the data and organize as a col_list
-df = pd.read_csv("davinci wrist sample.csv", usecols=col_list)
+df = pd.read_csv("davinci wrist sample.csv", sep ='\t', usecols= col_list)
+
+# The head() method returns a specified number of rows, string from the top.
+# The head() method returns the first 5 rows if a number is not specified.
+# print(df.head())
+# Use to_string() to print the entire DataFrame.
+print(df.to_string())
 
 # Store the XYZ values of each point in 1 List , size is nx3 matrix
 # Create 3 lists for 3 points 
