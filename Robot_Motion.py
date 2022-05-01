@@ -2,6 +2,7 @@
 # You might have to do: pip install gym
 from ambf_client import Client
 import pandas as pd
+from mat4py import loadmat
 import time
 
 # Create a instance of the client
@@ -35,6 +36,8 @@ time.sleep(3)
 # Load the Transformation Matrix
 # If we have the entire T then 
 # p = [T(1,4), T(2,4), T(3,4)];
+
+data = loadmat('transformation.mat') # may need to install mat4py
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
